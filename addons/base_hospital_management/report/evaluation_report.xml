@@ -53,7 +53,7 @@
                             <t t-if="doc.clinical_notes">
                                 <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#F9F9F9;">
                                     <p style="font-weight:bold; margin-bottom:4px;">Clinical Notes</p>
-                                    <p t-esc="doc.clinical_notes"/>
+                                    <pre style="margin:0; font-family:inherit; font-size:11pt; white-space:pre-wrap;"><t t-esc="doc.clinical_notes.strip()"/></pre>
                                 </div>
                             </t>
 
@@ -61,15 +61,15 @@
                             <t t-if="doc.diagnosis">
                                 <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#FAFAFA;">
                                     <p style="font-weight:bold; margin-bottom:4px;">Diagnosis</p>
-                                    <p t-esc="doc.diagnosis"/>
-                                </div>
+                                    <pre style="margin:0; font-family:inherit; font-size:11pt; white-space:pre-wrap;"><t t-esc="doc.diagnosis.strip()"/></pre>
+                                                                    </div>
                             </t>
 
                             <!-- Treatment Plan -->
                             <t t-if="doc.treatment_plan">
                                 <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#F9F9F9;">
                                     <p style="font-weight:bold; margin-bottom:4px;">Treatment Plan</p>
-                                    <p t-esc="doc.treatment_plan"/>
+                                    <pre style="margin:0; font-family:inherit; font-size:11pt; white-space:pre-wrap;"><t t-esc="doc.treatment_plan.strip()"/></pre>
                                 </div>
                             </t>
 
