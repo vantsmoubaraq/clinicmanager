@@ -100,7 +100,10 @@
                             </t>
 
                         </t>
-                        <!-- Footer -->
+                        <br/>
+                        <p>
+                        Attending Clinician: <span t-esc="env.user.name"/>
+                        </p>
                         <div style="margin-top:20mm; font-size:10pt; color:#555; text-align:center; border-top:1px solid #D0D0D0; padding-top:5px;">
     Services Offered: General Medicine | Laboratory | X-ray/Scan | Obstetrics
 </div>
