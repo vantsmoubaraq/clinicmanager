@@ -152,6 +152,15 @@
                                 </tree>
                                 <form>
                                     <sheet>
+                                        <header>
+    <div style="text-align:left; padding:5px 5px; margin-left: 2px;">
+        <button name="action_print_eval_report"
+                string="Print Evaluation"
+                type="object"
+                class="btn-primary"/>
+    </div>
+</header>
+
                                     <group>
                                         <group>
                                             <field name="evaluation_no"/>

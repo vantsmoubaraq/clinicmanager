@@ -53,7 +53,7 @@
         </field>
     </record>
     <!--Lab test menu-->
-    <menuitem id="lab_test_menu" name="Lab Test"
+    <menuitem id="lab_test_menu" name="Test Types"
               parent="hospital_menu_laboratory" sequence="4"
               action="lab_test_action"/>
 </odoo>

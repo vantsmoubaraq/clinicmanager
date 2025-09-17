@@ -28,6 +28,7 @@
                         <group>
                             <field name="patient_id" widget="selection"/>
                             <field name="patient_type" widget="radio"/>
+                            <field name="indication"/>
                         </group>
                         <group>
                             <field name="doctor_id"
@@ -73,7 +74,7 @@
         </field>
     </record>
     <!--    Test type menu-->
-    <menuitem id="lab_test_line_menu" name="Lab Requests"
+    <menuitem id="lab_test_line_menu" name="Test Request"
               parent="hospital_menu_laboratory" sequence="0"
               action="lab_test_line_action"/>
 </odoo>

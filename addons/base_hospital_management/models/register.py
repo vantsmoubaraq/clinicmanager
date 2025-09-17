@@ -32,3 +32,7 @@ class Register(models.Model):
             "url": self.patient_name_link,
             "target": "self",
         }
+    
+    def action_print_headed_paper(self):
+        """Return the report action for all selected records."""
+        return self.env.ref('base_hospital_management.headed_paper_report').report_action(self)

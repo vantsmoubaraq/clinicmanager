@@ -60,3 +60,5 @@ class Evaluation(models.Model):
             vals["evaluation_no"] = self.env["ir.sequence"].next_by_code("evaluations.sequence")
         return super(Evaluation, self).create(vals)
     
+    def action_print_eval_report(self):
+        return self.env.ref("base_hospital_management.action_report_evaluation").report_action(self)

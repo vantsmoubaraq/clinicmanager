@@ -88,6 +88,13 @@
         "views/prescription_orders.xml",
         "views/register.xml",
         "views/appointments.xml",
+        "views/headed_paper.xml",
+        "report/headed_paper.xml",
+        "views/test_request_report.xml",
+        "report/account.xml",
+        "report/action_account.xml",
+        "report/evaluation_report.xml"
+
     ],
     "demo": ["demo/hr_job_demo.xml"],
     "assets": {

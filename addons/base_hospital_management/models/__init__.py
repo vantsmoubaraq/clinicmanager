@@ -63,3 +63,4 @@ from . import stock_picking
 from . import appointments
 from . import rop
 from . import evaluations
+from . import account

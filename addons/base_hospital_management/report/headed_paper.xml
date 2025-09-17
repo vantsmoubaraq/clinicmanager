@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <report
+        id="headed_paper_report"
+        model="res.partner"
+        string="Print Headed Paper"
+        report_type="qweb-pdf"
+        name="base_hospital_management.headed_paper"
+        file="base_hospital_management.headed_paper"
+        print_report_name="'Headed_Paper'"
+    />
+</odoo>

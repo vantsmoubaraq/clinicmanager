@@ -1,0 +1,123 @@
+<odoo>
+    <data>
+        <template id="report_evaluation_document">
+            <t t-call="web.external_layout">
+                <main>
+                    <div class="page" style="margin: 10mm; font-family: 'Arial', sans-serif; font-size: 11pt; line-height: 1.5; color:#333;">
+
+                        <!-- Loop over records -->
+                        <t t-foreach="docs" t-as="doc">
+
+                            <!-- Header -->
+                            <h2 style="text-align:center; margin-bottom:10mm; font-size:18pt; font-weight:bold; color:#2E2E2E;">
+                                Clinical Evaluation Report
+                            </h2>
+
+                            <!-- Patient Info -->
+                            <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#F9F9F9;">
+                                <p style="font-size:12pt; margin:0;">
+                                    <strong>Name:</strong> <span t-esc="doc.patient_id.name or 'N/A'"/> &#160; &#160;
+                                    <strong>Date:</strong> <span t-esc="doc.date or ''"/> &#160; &#160;
+                                    <strong>Evaluation#:</strong> <span t-esc="doc.evaluation_no"/>
+                                </p>
+                            </div>
+
+                            <!-- Vitals -->
+                            <t t-if="doc.bp or doc.heart_rate or doc.temperature or doc.respiration_rate">
+                                <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#FAFAFA;">
+                                    <p style="font-weight:bold; margin-bottom:5px;">Vital Signs</p>
+                                    <table class="table table-sm" style="width:100%; font-size:11pt; border-collapse:collapse;">
+                                        <tbody>
+                                            <tr t-if="doc.bp">
+                                                <td style="padding:4px; border-bottom:1px solid #DDD;"><strong>Blood Pressure:</strong></td>
+                                                <td style="padding:4px; border-bottom:1px solid #DDD;"><span t-esc="doc.bp"/></td>
+                                            </tr>
+                                            <tr t-if="doc.heart_rate">
+                                                <td style="padding:4px; border-bottom:1px solid #DDD;"><strong>Heart Rate:</strong></td>
+                                                <td style="padding:4px; border-bottom:1px solid #DDD;"><span t-esc="doc.heart_rate"/></td>
+                                            </tr>
+                                            <tr t-if="doc.temperature">
+                                                <td style="padding:4px; border-bottom:1px solid #DDD;"><strong>Temperature:</strong></td>
+                                                <td style="padding:4px; border-bottom:1px solid #DDD;"><span t-esc="doc.temperature"/></td>
+                                            </tr>
+                                            <tr t-if="doc.respiration_rate">
+                                                <td style="padding:4px;"><strong>Respiration Rate:</strong></td>
+                                                <td style="padding:4px;"><span t-esc="doc.respiration_rate"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </t>
+
+                            <!-- Clinical Notes -->
+                            <t t-if="doc.clinical_notes">
+                                <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#F9F9F9;">
+                                    <p style="font-weight:bold; margin-bottom:4px;">Clinical Notes</p>
+                                    <p t-esc="doc.clinical_notes"/>
+                                </div>
+                            </t>
+
+                            <!-- Diagnosis -->
+                            <t t-if="doc.diagnosis">
+                                <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#FAFAFA;">
+                                    <p style="font-weight:bold; margin-bottom:4px;">Diagnosis</p>
+                                    <p t-esc="doc.diagnosis"/>
+                                </div>
+                            </t>
+
+                            <!-- Treatment Plan -->
+                            <t t-if="doc.treatment_plan">
+                                <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#F9F9F9;">
+                                    <p style="font-weight:bold; margin-bottom:4px;">Treatment Plan</p>
+                                    <p t-esc="doc.treatment_plan"/>
+                                </div>
+                            </t>
+
+                            <!-- Orthopedics Section -->
+                            <t t-if="doc.spine_conditions or doc.injury_type or doc.affected_limb or doc.mechanism_of_injury or doc.range_of_motion or doc.neurovascular_status">
+                                <div style="margin-bottom:6mm; padding:10px; border:1px solid #D0D0D0; border-radius:5px; background-color:#FAFAFA;">
+                                    <p style="font-weight:bold; margin-bottom:5px;">Orthopedics</p>
+                                    
+                                    <t t-if="doc.spine_conditions">
+                                        <p><strong>Spine Condition:</strong> <span t-esc="doc.spine_conditions"/></p>
+                                    </t>
+                                    <t t-if="doc.injury_type">
+                                        <p><strong>Injury Type:</strong> <span t-esc="doc.injury_type"/></p>
+                                    </t>
+                                    <t t-if="doc.affected_limb">
+                                        <p><strong>Affected Limb:</strong> <span t-esc="doc.affected_limb"/></p>
+                                    </t>
+                                    <t t-if="doc.mechanism_of_injury">
+                                        <p><strong>Mechanism of Injury:</strong> <span t-esc="doc.mechanism_of_injury"/></p>
+                                    </t>
+                                    <t t-if="doc.range_of_motion">
+                                        <p><strong>Range of Motion:</strong> <span t-esc="doc.range_of_motion"/></p>
+                                    </t>
+                                    <t t-if="doc.neurovascular_status">
+                                        <p><strong>Neurovascular Status:</strong> <span t-esc="doc.neurovascular_status"/></p>
+                                    </t>
+                                </div>
+                            </t>
+
+                        </t>
+                        <!-- Footer -->
+                        <div style="margin-top:20mm; font-size:10pt; color:#555; text-align:center; border-top:1px solid #D0D0D0; padding-top:5px;">
+    Services Offered: General Medicine | Laboratory | X-ray/Scan | Obstetrics
+</div>
+
+                    </div>
+                </main>
+            </t>
+        </template>
+
+        <!-- Report Action -->
+        <report
+            id="action_report_evaluation"
+            model="evaluation.clinicalnotes"
+            string="Clinical Evaluation Report"
+            report_type="qweb-pdf"
+            name="base_hospital_management.report_evaluation_document"
+            file="base_hospital_management.report_evaluation_document"
+        />
+    </data>
+</odoo>

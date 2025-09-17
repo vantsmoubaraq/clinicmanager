@@ -52,6 +52,7 @@ class LabTestLine(models.Model):
     state = fields.Selection(selection=[
         ('draft', 'Draft'), ('created', 'created')
     ], default='draft', string='State', help='State of the record')
+    indication = fields.Char(string="Indication")
 
     @api.model
     def create(self, vals):

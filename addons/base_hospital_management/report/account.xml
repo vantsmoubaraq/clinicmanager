@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Define new A5 template -->
+    <template id="report_invoice_a5" inherit_id="account.report_invoice_with_payments">
+        
+    </template>
+</odoo>
