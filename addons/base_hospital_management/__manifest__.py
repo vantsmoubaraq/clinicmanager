@@ -37,7 +37,7 @@
     "company": "Cybrosys Techno Solutions",
     "maintainer": "Cybrosys Techno Solutions",
     "website": "https://www.cybrosys.com",
-    "depends": ["hr", "stock", "sale_management", "account", "stock", "purchase", "point_of_sale", "base_accounting_kit", "hr_expense", "muk_web_theme" ],
+    "depends": ["hr", "stock", "sale_management", "account", "stock", "purchase", "point_of_sale", "base_accounting_kit", "hr_expense",],
     "data": [
         "security/base_hospital_management_groups.xml",
         "security/doctor_allocation_security.xml",
