@@ -4,7 +4,7 @@
     <menuitem id="hospital_menu_root"
               web_icon="base_hospital_management,static/description/icon.png"
               groups="base_hospital_management.base_hospital_management_group_lab_assistant,base_hospital_management.base_hospital_management_group_pharmacist,base_hospital_management.base_hospital_management_group_nurse,base_hospital_management.base_hospital_management_group_doctor,base_hospital_management.base_hospital_management_group_receptionist,base_hospital_management.base_hospital_management_group_manager"
-              name="Carewell Orthopaedic and Medical Center"/>
+              name="Clinic Manager" sequence="0"/>
     <!--Appointment menu-->
     <menuitem id="menu_hospital_appointment" name="Appointments" groups="base_hospital_management.base_hospital_management_group_manager"
               parent="hospital_menu_root" 
